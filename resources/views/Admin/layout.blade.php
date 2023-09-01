@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 position-fixed">
+            <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg bg-light">
                     <div class="container-fluid ">
                         <a class="navbar-brand" href="#">Student Management System</a>

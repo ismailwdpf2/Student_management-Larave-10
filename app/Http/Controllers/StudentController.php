@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\student;
+
+use App\Models\Student;
+// use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -14,7 +16,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-
+      $student = Student::all();
+      return view('Admin.student.index', compact('student'));
     }
 
     /**
