@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
-// use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -25,15 +24,17 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+      return view('Admin.student.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {  
+        $input =  $request->all();
+        Student::create($input);
+        return redirect()->route('student.index')->with('massage', "Successfully added");
     }
 
     /**
