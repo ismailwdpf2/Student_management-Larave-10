@@ -35,7 +35,7 @@
                     <a class="active" href="#home">Home</a>
                     <a href="{{ route('student.index') }}">Student</a>
                     <a href="{{ route('teacher.index') }}">Teacher</a>
-                    <a href="#about">Course's</a>
+                    <a href="{{ route('course.index') }}">Course's</a>
                     <a href="#about">Enrollment</a>
                     <a href="#about">Payment</a>
                 </div>

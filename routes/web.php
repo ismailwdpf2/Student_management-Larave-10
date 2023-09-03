@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
@@ -24,4 +25,7 @@ Route::resources([
 ]);
 Route::resources([
     'teacher'=> TeacherController::class
+]);
+Route::resources([
+    'course'=> CourseController::class
 ]);
