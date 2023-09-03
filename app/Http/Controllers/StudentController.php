@@ -34,7 +34,7 @@ class StudentController extends Controller
     {
         $input =  $request->all();
         Student::create($input);
-        return redirect()->route('student.index')->with('massage', "Successfully added");
+        return redirect()->route('student.index')->with('success', "Successfully added");
     }
 
     /**
@@ -64,14 +64,15 @@ class StudentController extends Controller
         $input = $request->all();
         $student->update($input);
 
-        return redirect()->route('student.index');
+        return redirect()->route('student.index')->with('warning', 'student information updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return redirect()->route('student.index')->with('danger', 'Student information deleted');
     }
 }

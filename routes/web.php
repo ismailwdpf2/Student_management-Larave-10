@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +21,7 @@ Route::get('/', function () {
 // Route::resource('/student', StudentController::class);
 Route::resources([
     'student'=> StudentController::class
+]);
+Route::resources([
+    'teacher'=> TeacherController::class
 ]);
