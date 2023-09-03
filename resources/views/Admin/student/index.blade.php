@@ -29,7 +29,7 @@
                 <td>{{ $item->mobile }}</td>
                 <td>
                     <a href="{{ url('student',$item->id) }}"><button class="btn btn-success"> Veiw</button></a>  
-                    <a href="{{ url('student.edit',$item->id.'edit') }}"><button class="btn btn-info"> Edit</button></a>
+                    <a href="{{ route('student.edit', $item->id) }}" class="btn-primary"><button class="btn btn-success">Edit</button></a>
                     
                     <form action="{{ route('student.destroy',$item->id) }}" method="POST">
                         @csrf

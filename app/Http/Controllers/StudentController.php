@@ -15,8 +15,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-      $student = Student::all();
-      return view('Admin.student.index', compact('student'));
+        $student = Student::all();
+        return view('Admin.student.index', compact('student'));
     }
 
     /**
@@ -24,14 +24,14 @@ class StudentController extends Controller
      */
     public function create()
     {
-      return view('Admin.student.create');
+        return view('Admin.student.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {  
+    {
         $input =  $request->all();
         Student::create($input);
         return redirect()->route('student.index')->with('massage', "Successfully added");
@@ -42,7 +42,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('Admin.student.show', compact('student'));
     }
 
     /**
@@ -50,15 +51,20 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('Admin.student.edit', compact('student'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Student $student)
     {
-        //
+        // $student = Student::find($id);
+        $input = $request->all();
+        $student->update($input);
+
+        return redirect()->route('student.index');
     }
 
     /**
