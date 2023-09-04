@@ -60,9 +60,10 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        // $student = Student::find($id);
-        $input = $request->all();
-        $student->update($input);
+
+        // $input = $request->all();
+        // $student->update($input);
+        $student->update($request->all());
 
         return redirect()->route('student.index')->with('warning', 'student information updated successfully');
     }

@@ -36,6 +36,7 @@
                     <a href="{{ route('student.index') }}">Student</a>
                     <a href="{{ route('teacher.index') }}">Teacher</a>
                     <a href="{{ route('course.index') }}">Course's</a>
+                    <a href="{{ route('batch.index') }}">Batches</a>
                     <a href="#about">Enrollment</a>
                     <a href="#about">Payment</a>
                 </div>
@@ -43,7 +44,7 @@
             <div class="col-9">
                 @include('flash-massage')
                 <div class="content">
-                   @yield('content')
+                    @yield('content')
                 </div>
             </div>
         </div>

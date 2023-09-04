@@ -34,7 +34,7 @@ class TeacherController extends Controller
     {
         $input =  $request->all();
         Teacher::create($input);
-        return redirect()->route('teacher.index')->with('massage', "Successfully added");
+        return redirect()->route('teacher.index')->with('success', "Successfully added");
     }
 
     /**
@@ -60,11 +60,11 @@ class TeacherController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        // $teacher = Teacher::find($id);
-        $input = $request->all();
-        $teacher->update($input);
-
-        return redirect()->route('teacher.index');
+        // $input = $request->all();
+        // $teacher->update($input);
+        $teacher->update($request->all());
+        
+        return redirect()->route('teacher.index')->with('warning', 'Teacher information updated successfully');
     }
 
     /**
@@ -73,6 +73,6 @@ class TeacherController extends Controller
     public function destroy(string $id)
     {
         Teacher::findOrFail($id)->delete();
-        return redirect()->route('teacher.index');
+        return redirect()->route('teacher.index')->with('danger','Teacher information deleted');
     }
 }

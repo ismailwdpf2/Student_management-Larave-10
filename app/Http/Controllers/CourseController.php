@@ -60,9 +60,10 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        // $course = Course::find($id);
-        $input = $request->all();
-        $course->update($input);
+        // $input = $request->all();
+        // $course->update($input);
+        $course->update($request->all());
+
 
         return redirect()->route('course.index')->with('warning', 'course information updated successfully');
     }

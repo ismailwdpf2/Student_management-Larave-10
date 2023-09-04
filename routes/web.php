@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
@@ -28,4 +29,7 @@ Route::resources([
 ]);
 Route::resources([
     'course'=> CourseController::class
+]);
+Route::resources([
+    'batch'=> BatchController::class
 ]);

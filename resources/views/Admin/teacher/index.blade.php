@@ -5,11 +5,6 @@
         <a href="{{ route('teacher.create') }}">
            <button class="btn btn-success">Add new</button>
         </a>
-        @if (session()->has('message'))
-        <div class="alert alert-seccecc">
-            {{ session()->get('message') }}
-        </div>
-    @endif
         <div class="table-responsive">
             <table class="table">
                 <thead>
