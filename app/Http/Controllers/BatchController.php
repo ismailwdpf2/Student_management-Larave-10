@@ -14,7 +14,7 @@ class BatchController extends Controller
     public function index()
     {
         $batches = Batch::all();
-        return view('Admin.batch.index', compact('batches'));
+        return view ('Admin.batch.index', compact('batches'));
     }
 
     /**
@@ -52,7 +52,6 @@ class BatchController extends Controller
         $batches = Batch::find($id);
         return view('Admin.batch.edit', compact('batches'));
     }
-
     /**
      * Update the specified resource in storage.
      */
@@ -62,16 +61,14 @@ class BatchController extends Controller
         // $input = $request->all();
         // $batches->update($input);
         $batch->update($request->all());
-
-
         return redirect()->route('batch.index')->with('warning', 'Batch updated successfully');
     }
-
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Batch $batch)
     {
-        //
+        $batch->delete();
+        return redirect()->route('course.index')->with('danger', 'Course information deleted');
     }
 }

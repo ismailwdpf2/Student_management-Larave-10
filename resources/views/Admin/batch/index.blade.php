@@ -12,8 +12,8 @@
                     <tr>
                         <th>ID</th>
                         <th>NAME</th>
-                        <th>SYLLABUS</th>
-                        <th>DURATION</th>
+                        <th>course name</th>
+                        <th>Start date</th>
                         <th>ACTION</th>
                     </tr>
                 </thead>
