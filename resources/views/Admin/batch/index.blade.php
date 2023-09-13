@@ -21,7 +21,7 @@
              <tr>
                 <td>{{ $batch->id }}</td>
                 <td>{{ $batch->name }}</td>
-                <td>{{ $batch->course_id }}</td>
+                <td>{{ $batch->course->name }}</td>
                 <td>{{ $batch->start_date }}</td>
                 <td>
                     <a href="{{ url('batch',$batch->id) }}"><button class="btn btn-success"> Veiw</button></a>  

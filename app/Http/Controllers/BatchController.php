@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Batch;
+use App\Models\Course;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 class BatchController extends Controller
@@ -22,7 +23,8 @@ class BatchController extends Controller
      */
     public function create()
     {
-       return view('Admin.batch.create');
+        $courses = Course::pluck('name', 'id');
+        return view('Admin.batch.create', compact('courses'));
     }
 
     /**
@@ -49,8 +51,9 @@ class BatchController extends Controller
      */
     public function edit(string $id)
     {
+        $courses = Course::pluck('name', 'id');
         $batches = Batch::find($id);
-        return view('Admin.batch.edit', compact('batches'));
+        return view('Admin.batch.edit', compact('batches', 'courses'));
     }
     /**
      * Update the specified resource in storage.
